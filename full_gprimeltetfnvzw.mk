@@ -15,26 +15,15 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/samsung/gprimeltetmo/full_gprimeltetmo.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit from device.mk
+$(call inherit-product, device/samsung/gprimeltetfnvzw/device.mk)
 
 # Device identifier. This must come after all inclusions
-# Release name
-PRODUCT_RELEASE_NAME := Samsung Galaxy Grand Prime
-
-# Boot animation
-TARGET_SCREEN_WIDTH := 540
-TARGET_SCREEN_HEIGHT := 960
-
-PRODUCT_DEVICE := gprimeltetmo
-PRODUCT_NAME := omni_gprimeltetmo
+PRODUCT_DEVICE := gprimeltetfnvzw
+PRODUCT_NAME := full_gprimeltetfnvzw
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-G530T
+PRODUCT_MODEL := SM-S920L
 PRODUCT_MANUFACTURER := samsung
-
-# My own ID
-TARGET_UNOFFICIAL_BUILD_ID  := VINNY
-
-# Inherit some common omni stuff.
-$(call inherit-product-if-exists, vendor/omni/config/common.mk)
-$(call inherit-product-if-exists, vendor/omni/config/gsm.mk)
 
